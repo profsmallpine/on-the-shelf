@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/profsmallpine/books/app"
+	"github.com/profsmallpine/on-the-shelf/app"
 )
 
 var files embed.FS

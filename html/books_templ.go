@@ -8,7 +8,7 @@ package html
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-func Login() templ.Component {
+func ShowBooks() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		if templ_7745c5c3_CtxErr := ctx.Err(); templ_7745c5c3_CtxErr != nil {
@@ -29,7 +29,7 @@ func Login() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8\"><div class=\"max-w-md w-full\"><div><img class=\"mx-auto h-120 w-auto\" src=\"/client/dist/images/logo.png\" alt=\"Books on the shelf\"> <button type=\"submit\" class=\"group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-stone-600 hover:bg-stone-500 focus:outline-none focus:border-stone-700 focus:shadow-outline-stone active:bg-stone-700 transition duration-150 ease-in-out cursor-pointer\" hx-get=\"/auth/google/login\" hx-target=\"body\" hx-push-url=\"true\"><span class=\"absolute left-0 inset-y-0 flex items-center pl-3\"><svg class=\"h-5 w-5 text-stone-500 group-hover:text-stone-400 transition ease-in-out duration-150\" fill=\"currentColor\" viewBox=\"0 0 20 20\"><path fill-rule=\"evenodd\" d=\"M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z\" clip-rule=\"evenodd\"></path></svg></span> Sign in with Google</button></div></div></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<h1>TODO: books table or empty state</h1>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

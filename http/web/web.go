@@ -4,14 +4,27 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/profsmallpine/books/domain"
+	"github.com/profsmallpine/on-the-shelf/db/models"
+	"github.com/profsmallpine/on-the-shelf/domain"
 	"github.com/xy-planning-network/trails"
 	"github.com/xy-planning-network/trails/http/session"
 	"github.com/xy-planning-network/trails/ranger"
 )
 
 type Handler struct {
+	domain.Procedures
+	*models.Queries
 	*ranger.Ranger
+	domain.Services
+}
+
+// currentUser helps by retrieving the User stored from the provided context.
+func (h *Handler) currentUser(ctx context.Context) (*domain.User, error) {
+	u, ok := ctx.Value(trails.CurrentUserKey).(*domain.User)
+	if !ok {
+		return nil, domain.ErrNoUser
+	}
+	return u, nil
 }
 
 // session helps by retrieving the session.TrailsSessionable from the provided context.
